@@ -5,10 +5,10 @@
 
 // =============> write your prediction of the error here
     // line 8 missing formal parameter
-function square(3) {
+/*function square(3) {
     return num * num;
 }
-
+*/
 // =============> write the error message here
     // SyntaxError: missing formal parameter
 // =============> explain this error message here
