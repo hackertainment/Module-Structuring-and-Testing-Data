@@ -58,5 +58,6 @@ assertEquals(getAngleType(135), "Obtuse angle");
 assertEquals(getAngleType(180), "Straight angle");
 assertEquals(getAngleType(270), "Reflex angle");
 assertEquals(getAngleType(360), "Invalid angle");
+assertEquals(getAngleType(-180), "Invalid angle");
 assertEquals(getAngleType(0), "Invalid angle");
 assertEquals(getAngleType(45), "Acute angle");
