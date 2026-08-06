@@ -23,6 +23,28 @@
 
 function getCardValue(card) {
   // TODO: Implement this function
+  suits = ["♠", "♥", "♦", "♣"];
+
+  if (card.length==3 && card[0]=="1" && card[1]=="0" && suits.includes(card[2])) {
+    return 10;
+  }
+  else if (card.length==2 && suits.includes(card[1])) {
+    if (card[0]=="A") {
+      return 11;
+    }
+    else if (card[0]=="J" || card[0]=="Q" || card[0]=="K") {
+      return 10;
+    }
+    else if (card[0]>="2" && card[0]<="9") {
+      return Number(card[0]);
+    }
+    else {
+      throw new Error();
+    }
+  }
+  else {
+    throw new Error();
+  }
 }
 
 // The line below allows us to load the getCardValue function into tests in other files.
@@ -40,6 +62,13 @@ function assertEquals(actualOutput, targetOutput) {
 // TODO: Write tests to cover all outcomes, including throwing errors for invalid cards.
 // Examples:
 assertEquals(getCardValue("9♠"), 9);
+assertEquals(getCardValue("6♥"), 6);
+assertEquals(getCardValue("2♦"), 2);
+assertEquals(getCardValue("A♣"), 11);
+assertEquals(getCardValue("J♠"), 10);
+assertEquals(getCardValue("Q♥"), 10);
+assertEquals(getCardValue("K♦"), 10);
+assertEquals(getCardValue("10♣"), 10);
 
 // Handling invalid cards
 try {
@@ -52,3 +81,363 @@ try {
 }
 
 // What other invalid card cases can you think of?
+try {
+  getCardValue("");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue(" ");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("-");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("0");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("1");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("A");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("Z");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("2");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("  ");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("--");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("00");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("11");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("AA");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("ZZ");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("22");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue(" ♠");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("-♠");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("0♠");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("1♠");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("Z♠");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠ ");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠-");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠0");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠1");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠A");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠Z");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠2");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠♠");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("10");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("10 ");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("10-");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("100");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("101");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("10A");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("10Z");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("102");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue(" 10");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("-10");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("010");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("110");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("A10");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("Z10");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("210");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
+try {
+  getCardValue("♠10");
+
+  // This line will not be reached if an error is thrown as expected
+  console.error("Error was not thrown for invalid card 😢");
+} catch (e) {
+  console.log("Error thrown for invalid card 🎉");
+}
