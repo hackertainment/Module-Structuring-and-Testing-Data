@@ -23,28 +23,29 @@
 
 function getCardValue(card) {
   // TODO: Implement this function
-  suits = ["♠", "♥", "♦", "♣"];
+  const suits = ["♠", "♥", "♦", "♣"];
+  const ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
-  if (card.length==3 && card[0]=="1" && card[1]=="0" && suits.includes(card[2])) {
-    return 10;
-  }
-  else if (card.length==2 && suits.includes(card[1])) {
-    if (card[0]=="A") {
-      return 11;
-    }
-    else if (card[0]=="J" || card[0]=="Q" || card[0]=="K") {
-      return 10;
-    }
-    else if (card[0]>="2" && card[0]<="9") {
-      return Number(card[0]);
+  if (card.length>=2) {
+    let cardSuit = card.slice(-1);
+    let cardRank = card.slice(0, -1);
+
+    if (suits.includes(cardSuit) && ranks.includes(cardRank)) {
+      if (cardRank=="A") {
+        return 11;
+      }
+      else if (cardRank=="J" || cardRank=="Q" || cardRank=="K") {
+        return 10;
+      }
+      else {
+        return Number(cardRank);
+      }
     }
     else {
       throw new Error();
     }
   }
-  else {
-    throw new Error();
-  }
+  throw new Error();
 }
 
 // The line below allows us to load the getCardValue function into tests in other files.
