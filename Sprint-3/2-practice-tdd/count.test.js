@@ -26,4 +26,5 @@ test("should count multiple occurrences of a character", () => {
 // Then it should return 0, indicating that no occurrences of `char` were found.
 test("should count no occurrences of a character", () => {
   expect(countChar("aaaaa", "b")).toEqual(0);
+  expect(countChar("", "a")).toEqual(0);
 });
